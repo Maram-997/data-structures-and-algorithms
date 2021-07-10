@@ -10,12 +10,12 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
-  const maximum= arr.reduce((acc, val) => {
+  const maximum = arr.reduce((acc, val) => {
     return acc > val ? acc : val;
-});
-return maximum;
+  });
+  return maximum;
 
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,7 +25,8 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
@@ -74,24 +75,15 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
-  const newArr = [];
-//   const key = Object.keys(obj);
-//   const value = Object.values(obj);
-//   for (let i = 0; i < key.length; i++) {
-//     if([key[i]] = value[i]){
-//       newArr.push
-//     }
-// }
-// var result = {};
-// for (var i = 0; i < cols.length; i++) {
-//         result[cols[i]] = rows[i];
-// }
-//   return newArr;
-for (let property in obj) {
-  newArr.push(property,":",obj[property]);
-}
-return newArr;
+  let newArr=[];
+  for (const [key, value] of Object.entries(obj)) {
+    newArr.push(`${key}: ${value}`);
+  }
+  
+    return newArr;
+
 };
+
 
 
 
@@ -169,9 +161,21 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
+  let result;
   // Solution code here...
+  arr.map(element => {
 
+    if (element.name === character)  {
+      if (Object.values(element).length == 4){
+        result = true;
+      } else{
+        result = false;
+      }
+     
+    }
 
+  })
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
