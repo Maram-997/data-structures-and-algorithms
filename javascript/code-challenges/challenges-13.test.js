@@ -35,10 +35,10 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
-  let newArr = [];
+let newArr = [];
   arr.map(element => {
     newArr.push(element.charAt(0))
-  })
+  })  
   return newArr;
 };
 
