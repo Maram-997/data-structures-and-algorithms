@@ -146,14 +146,25 @@ This data could be sorted by name or price.
 const sortBy = (property, arr) => {
   // Solution code here...
   arr.sort((a, b) => {
-    if (a.names > b.name   ) {
-      return 1;
-    } else if (a.name < b.name  ) {
-      return -1;
-    }
-    else {
-      return 0;
-    }
+ if (property == 'name') {
+  if (a.names > b.name   ) {
+    return 1;
+  } else if (a.name < b.name  ) {
+    return -1;
+  }
+  else {
+    return 0;
+  }
+ } else if (property == 'price') {
+  if (a.price > b.price   ) {
+    return 1;
+  } else if (a.price < b.price  ) {
+    return -1;
+  }
+  else {
+    return 0;
+  }
+ }
   })
   return arr;
 };
@@ -200,13 +211,17 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
-//   let helpCheck = (x,y,z)=>{
-//  if (x[0] == y[0] == z[0]  ) {
-//    return true
-//  }
-    
-//   }
-   
+let x = board[0];
+let y = board[1];
+let z = board[2];
+for (let i = 0; i < board.length; i++) {
+  if (x[0] == y[0] == z[0] || x[0] == y[1] == z[2] || x[2] == y[1] == z[0] || x[0] == x[1] == x[2] || y[0] == y[1] == y[2] || z[0] == z[1] == z[2] || x[1] == y[1] == z[1] || x[2] == y[2] == z[2]) {
+    return true
+  } else {
+    return false
+  }
+}
+ return board;  
 
 };
 
