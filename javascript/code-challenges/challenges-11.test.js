@@ -91,17 +91,17 @@ const divisibleByFiveTwoToThePower = (input) => {
   let resualtArr =[];
   input.filter(innerArr =>{
   newArr.push(innerArr.filter(element=>{
-    if(element % 5 == 0 ){
+    if( typeof(element) == 'number' && element % 5 == 0 ){
       return element
     }
   }))
+  });
+  newArr.map(insideArr =>{
+    resualtArr.push(insideArr.map(num=>{
+      return 2**num
+    }))
   })
- newArr.filter(arr =>{
-    arr.filter(num =>{
-      resualtArr.push( 2** item)
 
-    })
- })
  return resualtArr 
 };
 
