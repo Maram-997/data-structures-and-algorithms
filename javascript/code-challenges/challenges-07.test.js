@@ -26,19 +26,19 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
-  starWarsArr.sort((a,b)=>{
-    if (parseInt(a.height)<parseInt(b.height)) {
+  starWarsArr.sort((a, b) => {
+    if (parseInt(a.height) < parseInt(b.height)) {
       return 1;
-    } else if(parseInt(a.height)>parseInt(b.height)){
+    } else if (parseInt(a.height) > parseInt(b.height)) {
       return -1;
     }
     else {
       return 0;
     }
-  
+
   })
   return starWarsArr;
-  }
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -60,7 +60,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
-  return ( arr.join(' ')
+  return (arr.join(' ')
   )
 };
 
@@ -78,10 +78,11 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
   // Solution code here...
-  for (let i = 0; i < str.length; i++) {
- result.push(str[i].splice(''))    
+  let result = [];
+  for (let i = 0; i < str.length + 1; i++) {
+    let peices = str.slice(i);
+    result.push(peices);
   }
   return result;
 };
@@ -96,7 +97,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
-  return(  arr.split('')
+  return (arr.split('')
   )
 };
 
@@ -145,12 +146,12 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  recipe.ingredients.map(element =>{
-  //   const anotheMap = element.map(value => value.split(''));
-  //  const rev = anotheMap.map(item => item.reverse());
-  // const newArr3 = rev.map(a => a.join(''));
-  // const newArr4 = newArr3.split
-  } )
+ result =  recipe.ingredients.map(element => {
+      element = element.slice(element.indexOf(' ') +1)
+      element = element.slice(element.indexOf(' ') +1)
+          return element
+
+  })
 
   return result;
 };
